@@ -10,5 +10,13 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/', function(){
+	return view('welcome');
+});
+$api = app('Dingo\Api\Routing\Router');
 
-Route::get('/','OfficersController@index');
+$api->version('v1', function($api){
+	$api->get('hello',function(){
+		return "hello";
+	});
+});

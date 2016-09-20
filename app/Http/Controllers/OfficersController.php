@@ -18,7 +18,7 @@ class OfficersController extends Controller
     public function index()
     {
      $officers = Officer::all();
-     return view('officer.officer_index')->with('list_officer',$officers);
+     return $officers;
     }
 
     /**
